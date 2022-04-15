@@ -36,9 +36,17 @@ namespace DesignPatterns
 
 
             obj1.MethodA();
-            //obj1.MethodB(); object is a B object but can only act like an A object, just like on int z example, so we cant call a method which isn't written in class A 
+            //obj1.MethodB(); object is a B object but can only act like an A object, just like on int z example, so we cant call a method which isn't written in class A. so it gives error.
 
+            //to access Method B with obj1 we can do:
+            //((B)obj1).MethodB;
+            //(obj1 as B).MethodB; which overrides the A part of our method with B, so it would be same as B obj1 = new B();
 
+            //----------------------------Inheritence, Interface etc. --------------------------------//
+
+            Employee obj = new Employee();
+            obj.empID = 100;
+            obj.empName = "Alex";
 
         }
     }
