@@ -44,9 +44,11 @@ namespace DesignPatterns
 
             //----------------------------Inheritence, Interface etc. --------------------------------//
 
-            Employee obj = new Employee();
-            obj.empID = 100;
-            obj.empName = "Alex";
+            Employee obj = new Employee(100, "Alex"); //ID and Name can be only set once while creating the class 
+            //obj.empID = 100;     //can not be accessed or changed due to protecton levels, in other word, values are private
+            //obj.empName = "Alex";
+            obj.salary = 10000; //easily accessable
+
 
         }
     }
