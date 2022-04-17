@@ -42,12 +42,18 @@ namespace DesignPatterns
             //((B)obj1).MethodB;
             //(obj1 as B).MethodB; which overrides the A part of our method with B, so it would be same as B obj1 = new B();
 
-            //----------------------------Inheritence, Interface etc. --------------------------------//
+            //----------------------------Inheritence, Interface Part2 with Employee and IEmail etc. --------------------------------//
 
-            Employee obj = new Employee(100, "Alex"); //ID and Name can be only set once while creating the class 
+            IEmail email = new OutlookEmail();
+            Employee obj = new Employee(100, "Alex", email); //ID and Name can be only set once while creating the class 
             //obj.empID = 100;     //can not be accessed or changed due to protecton levels, in other word, values are private
             //obj.empName = "Alex";
             obj.salary = 10000; //easily accessable
+            obj.NotifyEmployee();
+
+            email = new WebServiceEmail();
+            Employee obj3 = new Employee(200, "Lynda", email);
+            obj3.NotifyEmployee();
 
 
         }
