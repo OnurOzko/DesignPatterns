@@ -4,7 +4,7 @@ using System.Text;
 
 namespace DesignPatterns._13com.factory
 {
-    class Add : ICalculate
+    public class Add : ICalculate
     {
         public void Calculate(double a, double b)
         {

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace DesignPatterns._13com.factory
 {
-    class Divide : ICalculate //in factory pattern, every class must have an interface
+    public class Divide : ICalculate //in factory pattern, every class must have an interface
     {
         public void Calculate (double a, double b)
         {

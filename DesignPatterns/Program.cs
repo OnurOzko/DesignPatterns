@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DesignPatterns._13com.factory;
+using System;
 
 namespace DesignPatterns
 {
@@ -55,6 +56,31 @@ namespace DesignPatterns
             Employee obj3 = new Employee(200, "Lynda", email);
             obj3.NotifyEmployee();
 
+            //---------------------------Factory Pattern---------------------------------//
+
+            Console.WriteLine("Enter first number");
+            string input = Console.ReadLine();
+            double num1, num2;
+            bool result = Double.TryParse(input, out num1);
+            if (!result)
+            {
+                Console.WriteLine("Please enter a number: ");
+                return;
+            }
+            Console.WriteLine("Enter second number: ");
+            result = Double.TryParse(Console.ReadLine(), out num2);
+            if (!result)
+            {
+                Console.WriteLine("Please enter a number: ");
+                return;
+            }
+            Console.WriteLine("Enter Add, Substract or Divide");
+            CalculateFactory factory = new CalculateFactory();
+            ICalculate objFac = factory.GetCalculation(Console.ReadLine());
+            objFac.Calculate(num1, num2);
+
+
+            //-----------------------------//
 
         }
     }
